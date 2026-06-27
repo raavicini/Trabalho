@@ -11,7 +11,7 @@ jest.mock("next/navigation", () => ({
 
 
 
-jest.mock("@/service/auth/auth", () => ({
+jest.mock("../../service/auth/auth", () => ({
   authService: {
     signIn: jest.fn(),
     signUp: jest.fn(),
