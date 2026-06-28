@@ -101,11 +101,7 @@ export default function PostCard({
 
     <button
   type="button"
-  aria-label={liked ? "Curtido" : "Curtir"}
-  onClick={() => {
-    console.log("CLICOU");
-    handleLike();
-  }}
+  onClick={handleLike}
   disabled={isLoading}
   style={{
     background: liked ? "var(--secondary)" : "transparent",
@@ -121,7 +117,9 @@ export default function PostCard({
     opacity: isLoading ? 0.7 : 1,
   }}
 >
-  <span style={{ fontSize: "1.25rem" }}>{liked ? "❤️" : "🤍"}</span>
+  <span style={{ fontSize: "1.25rem" }}>
+    {liked ? "❤️" : "🤍"}
+  </span>
   <span>{isLoading ? "..." : liked ? "Curtido" : "Curtir"}</span>
 </button>
       </div>
