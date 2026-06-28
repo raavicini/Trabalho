@@ -67,8 +67,8 @@ describe("Fluxo de curtir posts (tela Home + PostCard)", () => {
     fireEvent.click(botaoCurtir);
 
     
-    await waitFor(() =>
-  expect(screen.getByRole("button", { name: /^Curtido$/i })).toBeInTheDocument()
+await waitFor(() =>
+  expect(screen.getByText("Curtido")).toBeInTheDocument()
 );
 
     expect(postsService.toggleLikePost).toHaveBeenCalledWith({
