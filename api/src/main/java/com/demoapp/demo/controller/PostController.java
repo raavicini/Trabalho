@@ -36,7 +36,7 @@ public class PostController {
 
   @GetMapping("/liked")
   public ResponseEntity<?> getLikedPosts(
-      @RequestParam Long userId,
+      @RequestParam(required = false) Long userId,
       @RequestParam(required = false) Integer limit,
       @RequestParam(required = false) Integer skip) {
     
@@ -59,7 +59,7 @@ public class PostController {
   @PostMapping("/{postId}/like")
   public ResponseEntity<?> toggleLike(
       @PathVariable Long postId,
-      @RequestParam Long userId) {
+      @RequestParam(required = false) Long userId)
     
     try {
       if (userId == null) {
