@@ -99,35 +99,29 @@ export default function PostCard({
           <span>👎 {post.reactions?.dislikes ?? 0} descurtidas</span>
         </div>
 
-        <button
-          onClick={handleLike}
-          disabled={isLoading}
-          style={{
-            background: liked ? "var(--secondary)" : "transparent",
-            color: liked ? "white" : "var(--foreground)",
-            border: `2px solid ${liked ? "var(--secondary)" : "var(--border)"}`,
-            padding: "0.5rem 1.25rem",
-            borderRadius: "0.375rem",
-            cursor: isLoading ? "not-allowed" : "pointer",
-            fontWeight: "500",
-            display: "flex",
-            alignItems: "center",
-            gap: "0.5rem",
-            transition: "all 0.2s",
-            opacity: isLoading ? 0.7 : 1,
-          }}
-          onMouseOver={(e) => {
-            if (!isLoading) {
-              e.currentTarget.style.transform = "scale(1.05)";
-            }
-          }}
-          onMouseOut={(e) => {
-            e.currentTarget.style.transform = "scale(1)";
-          }}
-        >
-          <span style={{ fontSize: "1.25rem" }}>{liked ? "❤️" : "🤍"}</span>
-          <span>{isLoading ? "..." : liked ? "Curtido" : "Curtir"}</span>
-        </button>
+    <button
+  type="button"
+  onClick={handleLike}
+  disabled={isLoading}
+  style={{
+    background: liked ? "var(--secondary)" : "transparent",
+    color: liked ? "white" : "var(--foreground)",
+    border: `2px solid ${liked ? "var(--secondary)" : "var(--border)"}`,
+    padding: "0.5rem 1.25rem",
+    borderRadius: "0.375rem",
+    cursor: isLoading ? "not-allowed" : "pointer",
+    fontWeight: "500",
+    display: "flex",
+    alignItems: "center",
+    gap: "0.5rem",
+    opacity: isLoading ? 0.7 : 1,
+  }}
+>
+  <span style={{ fontSize: "1.25rem" }}>
+    {liked ? "❤️" : "🤍"}
+  </span>
+  <span>{isLoading ? "..." : liked ? "Curtido" : "Curtir"}</span>
+</button>
       </div>
     </div>
   );
